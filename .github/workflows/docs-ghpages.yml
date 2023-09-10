@@ -30,7 +30,7 @@ jobs:
       - name: Create the required index page and move the latest rustdocs into docs
         run: |
           rm -rf ./docs
-          echo "<meta http-equiv=\"refresh\" content=\"0; url=build_wheel\">" > ./target/doc/index.html
+          echo "<meta http-equiv=\"refresh\" content=\"0; url=halo2_proofs\">" > ./target/doc/index.html
           mkdir -p ./docs
           cp -r ./target/doc ./docs
 
