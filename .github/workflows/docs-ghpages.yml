@@ -15,7 +15,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: doc
-          args: --no-deps --workspace --all-features
+          args: --no-deps --all-features
         env:
           RUSTDOCFLAGS: -Z unstable-options --enable-index-page --cfg docsrs --html-in-header ${{ github.workspace }}/halo2_proofs/katex-header.html
 
