@@ -31,7 +31,7 @@ jobs:
         run: |
           rm -rf ./docs
           
-          cp -r ./target/doc ./docs
+          cp -R ./target/doc ./docs
           echo "<meta http-equiv=\"refresh\" content=\"0; url=PSE_halo2\">" > ./docs/index.html
 
       - name: Deploy to GitHub Pages
