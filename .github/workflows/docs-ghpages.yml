@@ -30,9 +30,8 @@ jobs:
       - name: Create the required index page and move the latest rustdocs into docs
         run: |
           rm -rf ./docs
-          
           cp -R ./target/doc ./docs
-          echo "<meta http-equiv=\"refresh\" content=\"0; url=PSE_halo2\">" > ./docs/index.html
+          echo "<meta http-equiv=\"refresh\" content=\"0; url=pse_halo2\">" > ./docs/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
