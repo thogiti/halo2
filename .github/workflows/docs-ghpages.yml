@@ -23,15 +23,16 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: doc
-          args: --no-deps --all-features
+          args: --no-deps --all-features --workspace
         env:
           RUSTDOCFLAGS: -Z unstable-options --enable-index-page --cfg docsrs --html-in-header ${{ github.workspace }}/halo2_proofs/katex-header.html
 
       - name: Create the required index page and move the latest rustdocs into docs
         run: |
+          rm -rf ./docs
           echo "<meta http-equiv=\"refresh\" content=\"0; url=build_wheel\">" > ./target/doc/index.html
           mkdir -p ./docs
-          mv ./target/doc ./docs
+          cp -r ./target/doc ./docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
